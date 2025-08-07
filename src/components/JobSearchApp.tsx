@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Search, MapPin, DollarSign, Building, Calendar, ExternalLink, 
-  Loader2, AlertCircle, Users, Clock, TrendingUp 
+  Loader2, AlertCircle, Users, Clock 
 } from 'lucide-react';
 import '../styles/JobSearchApp.css';
 
@@ -40,26 +40,6 @@ interface JobDetails extends Job {
   };
 }
 
-interface SalaryEstimate {
-  job_title: string;
-  location: string;
-  min_salary: number;
-  max_salary: number;
-  median_salary: number;
-  salary_period: string;
-  salary_currency: string;
-}
-
-interface CompanySalary {
-  company_name: string;
-  job_title: string;
-  min_salary: number;
-  max_salary: number;
-  median_salary: number;
-  salary_currency: string;
-  salary_period: string;
-}
-
 const API_KEY = '8b3794ddb1msh97fb1a307bd5b83p1c2625jsn58f5c00c04d3';
 const BASE_URL = 'https://jsearch.p.rapidapi.com';
 
@@ -71,7 +51,7 @@ const JobSearchApp: React.FC = () => {
   // Job Search States
   const [searchQuery, setSearchQuery] = useState('developer jobs in kerala');
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const currentPage = 1;
   
   // Job Details States
   const [selectedJobId, setSelectedJobId] = useState('');
