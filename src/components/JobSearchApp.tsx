@@ -49,7 +49,7 @@ const JobSearchApp: React.FC = () => {
   const [error, setError] = useState('');
   
   // Job Search States
-  const [searchQuery, setSearchQuery] = useState('developer jobs in kerala');
+  const [searchQuery, setSearchQuery] = useState('react developer');
   const [jobs, setJobs] = useState<Job[]>([]);
   const currentPage = 1;
   
